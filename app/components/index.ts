@@ -1,6 +1,3 @@
-export * from "./HomeTabs"
-export * from "./TabScene/Following"
-export * from "./TabScene/ForYou"
 export * from "./PlaylistBar"
 export * from "./Sidebar"
 export * from "./VideoInfo"

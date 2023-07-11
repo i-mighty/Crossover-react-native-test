@@ -78,7 +78,7 @@ export const ForYouItem = observer(function ForYou({ item }: ForYouProps) {
         >
           <Flex
             background={color(state)}
-            p={3}
+            // p={3}
             justifyContent={"space-between"}
             alignItems="center"
             borderRadius={4}
@@ -91,6 +91,7 @@ export const ForYouItem = observer(function ForYou({ item }: ForYouProps) {
               bold
               color={colors.palette.accent100}
               fontSize={"lg"}
+              m={3}
             >
               {o.answer}
             </Text>
@@ -101,8 +102,8 @@ export const ForYouItem = observer(function ForYou({ item }: ForYouProps) {
                   {
                     height: 50,
                     width: 50,
-                    position: "absolute",
-                    right: 0,
+                    // position: "absolute",
+                    // right: 0,
                   },
                   state == "wrong" ? $wrongImage : $correctImage,
                 ]}
@@ -172,10 +173,11 @@ const $optionText: TextStyle = {
 }
 
 const $wrongImage: ImageStyle = {
-  marginTop: 10,
+  top: 10,
   transform: [{ rotateY: "180deg" }, { rotateX: "180deg" }],
 }
 
 const $correctImage: ImageStyle = {
-  marginBottom: 10,
+  top: -5,
+  // marginBottom: 10,
 }

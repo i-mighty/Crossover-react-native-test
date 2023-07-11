@@ -16,7 +16,7 @@ import {
   useDisclose,
 } from "native-base"
 import { Entypo } from "@expo/vector-icons"
-import { PlaylistBar, Sidebar, VideoInfo } from "."
+import { PlaylistBar, Sidebar, VideoInfo } from "./"
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 export interface FollowingItemProps {

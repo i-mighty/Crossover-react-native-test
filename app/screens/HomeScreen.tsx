@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
 import { ViewStyle } from "react-native"
 import { AppStackScreenProps } from "app/navigators"
-import { HomeTabs } from "app/components"
+import { HomeTabs } from "app/features"
 import { View } from "native-base"
 
 interface HomeScreenProps extends AppStackScreenProps<"Home"> {}
