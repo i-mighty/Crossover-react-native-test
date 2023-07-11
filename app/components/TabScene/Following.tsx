@@ -26,6 +26,7 @@ export const Following = observer(function Following() {
       pagingEnabled
       onEndReached={() => followingStore.fetchItems()}
       onEndReachedThreshold={2}
+      showsVerticalScrollIndicator={false}
     />
   )
 })

@@ -25,6 +25,7 @@ export const ForYou = observer(function ForYou() {
       pagingEnabled
       onEndReached={() => fypStore.fetchFyp()}
       onEndReachedThreshold={1}
+      showsVerticalScrollIndicator={false}
     />
   )
 })

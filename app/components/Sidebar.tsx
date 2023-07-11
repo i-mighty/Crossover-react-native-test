@@ -3,7 +3,7 @@ import { StyleProp, ViewStyle, Pressable } from "react-native"
 import { observer } from "mobx-react-lite"
 import { colors } from "app/theme"
 import { Avatar, Stack, Text, useDisclose } from "native-base"
-import { MaterialCommunityIcons, Feather, Ionicons } from "@expo/vector-icons"
+import { MaterialCommunityIcons, Feather, Ionicons, FontAwesome } from "@expo/vector-icons"
 import _ from "lodash"
 
 export interface SidebarProps {
@@ -39,9 +39,9 @@ export const Sidebar = observer(function Sidebar(props: SidebarProps) {
         </Text>
       </Stack>
       <Stack direction="column" space="1" alignItems={"center"}>
-        <Ionicons name="heart" size={48} color="white" />
+        <FontAwesome name="commenting" size={48} color="white" />
         <Text color="white" fontSize={"md"} bold>
-          {"5"}
+          {"8"}
         </Text>
       </Stack>
       <Stack direction="column" space="1" alignItems={"center"}>

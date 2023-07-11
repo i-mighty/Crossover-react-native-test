@@ -20,10 +20,6 @@ import { PlaylistBar, Sidebar, VideoInfo } from "."
 import { LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 export interface FollowingItemProps {
-  /**
-   * An optional style override useful for padding & margin.
-   */
-
   item: FollowingItem
 }
 
@@ -65,7 +61,7 @@ export const FollowingSingleItem = observer(function FollowingSingleItem(
       colors={[colors.palette.neutral900, colors.palette.secondary500, colors.palette.secondary400]}
     >
       <Flex flex={1} mb={16} p={4} flexDir="row" justifyContent={"flex-end"}>
-        <Flex flexDir="column" ml={16} mr={2} justifyContent={"space-between"}>
+        <Flex flexDir="column" flex={1} mr={2} justifyContent={"space-between"}>
           <Flex
             flexDir={"column"}
             justifyContent={backShown ? "flex-start" : "center"}

@@ -17,11 +17,6 @@ const optionIcons = {
   wrong: require("../../assets/FYP/thumbs-down.gif"),
 }
 export interface ForYouProps {
-  /**
-   * An optional style override useful for padding & margin.
-   */
-  style?: StyleProp<ViewStyle>
-
   item: Fyp
 }
 

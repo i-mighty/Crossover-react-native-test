@@ -5,15 +5,13 @@ import {
   Pressable,
   StatusBar,
   StyleProp,
-  TextStyle,
   View,
   ViewStyle,
 } from "react-native"
 import { observer } from "mobx-react-lite"
-import { colors, typography } from "app/theme"
-import { Text } from "app/components/Text"
-import { Box, Center, Stack, Text as NBText, useColorModeValue } from "native-base"
-import { SceneMap, SceneRendererProps, TabView } from "react-native-tab-view"
+import { colors } from "app/theme"
+import { Box, Center, Stack, Text as NBText } from "native-base"
+import { SceneMap, TabView } from "react-native-tab-view"
 import { Ionicons, FontAwesome } from "@expo/vector-icons"
 import { ForYou } from "./TabScene/ForYou"
 import { Following } from "./TabScene/Following"
@@ -98,7 +96,6 @@ export const HomeTabs = observer(function HomeTabs(props: HomeTabsProps) {
                   borderBottomWidth="5"
                   borderColor={borderColor}
                   alignItems="center"
-                  // m="3"
                   top="1"
                   left="20%"
                   p={5}
@@ -126,6 +123,7 @@ export const HomeTabs = observer(function HomeTabs(props: HomeTabsProps) {
           flex: 1,
           marginTop: StatusBar.currentHeight,
         }}
+        swipeEnabled={false}
       />
     </View>
   )
