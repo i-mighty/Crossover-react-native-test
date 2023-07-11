@@ -22,12 +22,16 @@ import { useFonts } from "expo-font"
 import React from "react"
 import { initialWindowMetrics, SafeAreaProvider } from "react-native-safe-area-context"
 import * as Linking from "expo-linking"
+import { NativeBaseProvider } from "native-base"
 import { useInitialRootStore } from "./models"
 import { AppNavigator, useNavigationPersistence } from "./navigators"
 import { ErrorBoundary } from "./screens/ErrorScreen/ErrorBoundary"
 import * as storage from "./utils/storage"
 import { customFontsToLoad } from "./theme"
 import Config from "./config"
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import Toast from "react-native-toast-message"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
@@ -59,6 +63,9 @@ interface AppProps {
 /**
  * This is the root component of our app.
  */
+
+const queryClient = new QueryClient()
+
 function App(props: AppProps) {
   const { hideSplashScreen } = props
   const {
@@ -95,13 +102,18 @@ function App(props: AppProps) {
   // otherwise, we're ready to render the app
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <ErrorBoundary catchErrors={Config.catchErrors}>
-        <AppNavigator
-          linking={linking}
-          initialState={initialNavigationState}
-          onStateChange={onNavigationStateChange}
-        />
-      </ErrorBoundary>
+      <NativeBaseProvider>
+        <QueryClientProvider client={queryClient}>
+          <ErrorBoundary catchErrors={Config.catchErrors}>
+            <AppNavigator
+              linking={linking}
+              initialState={initialNavigationState}
+              onStateChange={onNavigationStateChange}
+            />
+            <Toast />
+          </ErrorBoundary>
+        </QueryClientProvider>
+      </NativeBaseProvider>
     </SafeAreaProvider>
   )
 }

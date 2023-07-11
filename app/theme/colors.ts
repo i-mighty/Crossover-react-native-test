@@ -82,3 +82,34 @@ export const colors = {
    */
   errorBackground: palette.angry100,
 }
+
+export function addOpacity(hex: string, opacity: number) {
+  // Check if the opacity is a valid value
+  if (opacity < 0 || opacity > 100) {
+    throw new Error("Opacity must be between 0 and 100")
+  }
+
+  // Convert the hex color to an array of RGB values
+  var rgb = hexToRgb(hex)
+
+  // Calculate the alpha channel value
+  var alpha = opacity / 100
+
+  // Create a new color with the specified opacity
+  return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`
+}
+
+// Helper function to convert a hex color to an array of RGB values
+export function hexToRgb(hex: string) {
+  // Remove the hash symbol from the hex string
+  hex = hex.replace("#", "")
+
+  // Convert the hex string to an array of RGB values
+  var rgb = [
+    parseInt(hex.substring(0, 2), 16),
+    parseInt(hex.substring(2, 4), 16),
+    parseInt(hex.substring(4, 6), 16),
+  ]
+
+  return rgb
+}
