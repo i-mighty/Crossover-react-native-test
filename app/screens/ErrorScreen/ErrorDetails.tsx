@@ -1,7 +1,9 @@
 import React, { ErrorInfo } from "react"
 import { ScrollView, TextStyle, View, ViewStyle } from "react-native"
-import { Button, Icon, Screen, Text } from "../../components"
+import {} from "../../components"
 import { colors, spacing } from "../../theme"
+import { MaterialCommunityIcons } from "@expo/vector-icons"
+import { Button, Text } from "native-base"
 
 export interface ErrorDetailsProps {
   error: Error
@@ -11,33 +13,30 @@ export interface ErrorDetailsProps {
 
 export function ErrorDetails(props: ErrorDetailsProps) {
   return (
-    <Screen
-      preset="fixed"
-      safeAreaEdges={["top", "bottom"]}
-      contentContainerStyle={$contentContainer}
-    >
+    <ScrollView contentContainerStyle={$contentContainer}>
       <View style={$topSection}>
-        <Icon icon="ladybug" size={64} />
-        <Text style={$heading} preset="subheading" tx="errorScreen.title" />
-        <Text tx="errorScreen.friendlySubtitle" />
+        <MaterialCommunityIcons name="ladybug" size={64} color="black" />
+        <Text style={$heading} fontSize="lg" bold>
+          Something went wrong!
+        </Text>
+        <Text>
+          This is the screen that your users will see in production when an error is thrown
+        </Text>
       </View>
 
       <ScrollView style={$errorSection} contentContainerStyle={$errorSectionContentContainer}>
-        <Text style={$errorContent} weight="bold" text={`${props.error}`.trim()} />
-        <Text
-          selectable
-          style={$errorBacktrace}
-          text={`${props.errorInfo.componentStack}`.trim()}
-        />
+        <Text style={$errorContent} fontWeight="bold">
+          {`${props.error}`.trim()}
+        </Text>
+        <Text selectable style={$errorBacktrace}>
+          {`${props.errorInfo.componentStack}`.trim()}
+        </Text>
       </ScrollView>
 
-      <Button
-        preset="reversed"
-        style={$resetButton}
-        onPress={props.onReset}
-        tx="errorScreen.reset"
-      />
-    </Screen>
+      <Button style={$resetButton} onPress={props.onReset}>
+        Reset APP
+      </Button>
+    </ScrollView>
   )
 }
 

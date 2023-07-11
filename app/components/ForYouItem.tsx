@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StyleProp, TextStyle, ViewStyle, ImageStyle, TouchableOpacity } from "react-native"
+import { TextStyle, ImageStyle, TouchableOpacity } from "react-native"
 import { observer } from "mobx-react-lite"
 import { colors } from "app/theme"
 import { Fyp } from "app/models"
