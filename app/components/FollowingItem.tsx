@@ -63,7 +63,6 @@ export const FollowingSingleItem = observer(function FollowingSingleItem(
     <LinearGradient
       style={$container}
       colors={[colors.palette.neutral900, colors.palette.secondary500, colors.palette.secondary400]}
-      // start={{ x: 0.5, y: -0.2 }}
     >
       <Flex flex={1} mb={16} p={4} flexDir="row" justifyContent={"flex-end"}>
         <Flex flexDir="column" ml={16} mr={2} justifyContent={"space-between"}>

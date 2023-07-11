@@ -127,13 +127,8 @@ export const ForYouItem = observer(function ForYou({ item }: ForYouProps) {
       }}
       style={[$image]}
       cachePolicy="disk"
-      // cacheKey={`${item.type}-${item.id}`}
     >
-      <LinearGradient
-        style={$image}
-        colors={[colors.palette.neutral700, colors.transparent]}
-        // start={{ x: 0.5, y: -0.2 }}
-      >
+      <LinearGradient style={$image} colors={[colors.palette.neutral700, colors.transparent]}>
         <Box p={4} mt={16}>
           <Text fontSize={"2xl"} fontWeight={"semibold"} color={colors.background}>
             {highlight(item.question)}

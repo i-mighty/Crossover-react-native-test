@@ -16,7 +16,6 @@ if (__DEV__) {
   // to only execute this in development.
   require("./devtools/ReactotronConfig.ts")
 }
-import "./i18n"
 import "./utils/ignoreWarnings"
 import { useFonts } from "expo-font"
 import React from "react"

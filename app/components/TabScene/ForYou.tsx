@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StyleProp, ViewStyle, FlatList, View } from "react-native"
+import { FlatList, View } from "react-native"
 import { observer } from "mobx-react-lite"
 import { useStores } from "app/models"
 import { hp } from "../../theme/responsive"
